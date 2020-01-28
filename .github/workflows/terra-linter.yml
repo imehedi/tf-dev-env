@@ -11,5 +11,6 @@ jobs:
       - name: Lint Terraform
         uses: imehedi/ga-terraform-validate@master
         env: # Or as an environment variable
-          AWS_ACCESS_KEY_ID: ${{ secrets.GITHUB_SS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.GITHUB_SS_ACCESS_KEY }}
+          access_key_id: ${{ secrets.GITHUB_SS_ACCESS_KEY_ID }}
+          secret_access_key: ${{ secrets.GITHUB_SS_ACCESS_KEY }}
+          region: "eu-west-1"
