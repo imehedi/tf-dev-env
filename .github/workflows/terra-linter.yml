@@ -8,9 +8,17 @@ jobs:
       - name: Check out code
         uses: actions/checkout@master
 
-      - name: Lint Terraform
-        uses: imehedi/ga-terraform-validate@master
-        env: # Or as an environment variable
+      - name: Terraform Apply for AWS
+        uses: kciter/terraform-apply-for-aws-action@v3
+        with:
           access_key_id: ${{ secrets.GITHUB_SS_ACCESS_KEY_ID }}
           secret_access_key: ${{ secrets.GITHUB_SS_ACCESS_KEY }}
-          region: "eu-west-1"
+          region: eu-west-1
+          #variables: var=${{ github.sha }}
+          path: terraform/dev
+#      - name: Lint Terraform
+#        uses: imehedi/ga-terraform-validate@master
+#        env: # Or as an environment variable
+#          access_key_id: ${{ secrets.GITHUB_SS_ACCESS_KEY_ID }}
+#          secret_access_key: ${{ secrets.GITHUB_SS_ACCESS_KEY }}
+#          region: "eu-west-1"
