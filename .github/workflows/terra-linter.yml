@@ -15,7 +15,7 @@ jobs:
           secret_access_key: ${{ secrets.GITHUB_SS_ACCESS_KEY }}
           region: eu-west-1
           #variables: var=${{ github.sha }}
-          path: terraform/dev
+#          path: terraform/dev
 #      - name: Lint Terraform
 #        uses: imehedi/ga-terraform-validate@master
 #        env: # Or as an environment variable
