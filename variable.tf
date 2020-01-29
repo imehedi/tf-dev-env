@@ -15,3 +15,8 @@ variable "env_name" {
 }
 
 variable "ip_source" {} # value for this variable will be picked up from github secrets
+
+variable "bastion_zone" {
+  type    = string
+  default = "a"
+}
