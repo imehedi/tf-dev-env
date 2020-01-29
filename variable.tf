@@ -13,3 +13,5 @@ variable "env_name" {
   type    = string
   default = "development"
 }
+
+variable "ip_source" {} # value for this variable will be picked up from github secrets

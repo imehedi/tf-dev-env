@@ -41,3 +41,14 @@ module "vpc" {
   }
 
 }
+
+module "ssh_sg" {
+  source = "terraform-aws-modules/security-group/aws"
+
+  name        = "ssh-service"
+  description = "Security group to allow SSH ingress"
+  vpc_id      = module.vpc.vpc_id
+
+  ingress_cidr_blocks = [var.ip_source] # value for this variable will be picked up from github secrets
+  ingress_rules       = ["ssh-tcp"]
+}
