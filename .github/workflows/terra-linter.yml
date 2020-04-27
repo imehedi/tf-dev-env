@@ -1,5 +1,5 @@
 # An example workflow using the `remote` backend with `name`.
-name: 'Terraform Master Apply'
+name: 'Terraform Apply'
 on:
   push:
     branches:
@@ -7,7 +7,7 @@ on:
       - dev 
 jobs:
   remote:
-    name: 'Terraform Apply to master'
+    name: 'Terraform Apply'
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
